@@ -12,7 +12,16 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /round-slider\/.+\.js$/,
+        loader: 'imports-loader?jQuery=jquery2,$=jquery2,this=>window'
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
   }
 };
